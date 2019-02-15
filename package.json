@@ -2,6 +2,12 @@
   "name": "Jeffs_app",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "jquery": "^3.3.1"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/steamgeek7/Jeffs_App.git",
+  "author": "steamgeek7 <steamgeek7@gmail.com>",
+  "license": "MIT"
 }
