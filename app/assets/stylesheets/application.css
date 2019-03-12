@@ -42,3 +42,18 @@ a:hover {
   padding: 20px 10px;
   color: white;
 }
+/* Images */
+img {
+  width: 75%;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row{
+  width: 100%;
+}
+/* Search Bar */
+.search {
+  padding-top: 3px;
+}
