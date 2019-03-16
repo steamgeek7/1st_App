@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_001550) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "color"
-    t.string "price"
+    t.float "price"
   end
 
 end
