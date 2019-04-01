@@ -9,4 +9,11 @@ class Product < ApplicationRecord
   def average_rating
     comments.average(:rating).to_f
   end
+  def create
+  @product = Product.find(params[:product_id])
+  @comment = @product.comments.new(comment_params)
+  @comment.user = current_user
+  @comment.save
+  redirect_to product_path(@product)
+end
 end
