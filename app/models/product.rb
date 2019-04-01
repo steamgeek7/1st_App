@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  validates :name, presence: true
   def self.search(search_term)
     Product.where("name LIKE ?", "%#{search_term}%")
   end
@@ -9,11 +10,4 @@ class Product < ApplicationRecord
   def average_rating
     comments.average(:rating).to_f
   end
-  def create
-  @product = Product.find(params[:product_id])
-  @comment = @product.comments.new(comment_params)
-  @comment.user = current_user
-  @comment.save
-  redirect_to product_path(@product)
-end
 end

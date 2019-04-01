@@ -1,4 +1,4 @@
-def Comments
+@comment = @product.comments.new(params[:comment])
   <div class="product-reviews">
     <% @comments.each do |comment| %>
         <div class="row">
@@ -10,4 +10,3 @@ def Comments
     <% end %>
   </div>
   <div class="rated" data-score="<%= comment.rating %>"></div>
-end
