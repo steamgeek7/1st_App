@@ -57,3 +57,9 @@ img {
 .search {
   padding-top: 3px;
 }
+/*review*/
+.rated{
+  width: 75%;
+  height: 50px;
+
+}
