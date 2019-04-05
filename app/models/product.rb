@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   end
   has_many :comments
   def highest_rating_comment
-    comments.rating_desc.first
+    comments.rating_desc.first.rating
   end
   def average_rating
     comments.average(:rating).to_f
