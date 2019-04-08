@@ -55,7 +55,10 @@ end
 group :production do
   gem 'pg'
 end
-
+# Run against the latest stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 
