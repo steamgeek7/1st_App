@@ -5,7 +5,10 @@ require 'rails_helper'
 
     it "returns the average rating of all comments" do
         expect(@average.rating).to eq "3"
+    expect(Product.new(description: "Nice bike")).not_to be_valid
     end
+
+
 
     before do
       product.comments.create!(rating: 1, user: user, body: "Awful bike!")
