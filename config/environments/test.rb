@@ -44,7 +44,7 @@ Rails.application.configure do
   def first_sentence(string)
    string.to_s.split(/\.[ \t]|\.$|\n/).first
  end
- private :first_sentence
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
+#  private :first_sentence
+#   # Raises error for missing translations
+#   # config.action_view.raise_on_missing_translations = true
 end
