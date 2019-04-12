@@ -4,7 +4,7 @@ require 'rails_helper'
     let(:user) { User.create!(email: "something@yeah.com", password: "yurp34") }
 
     it "returns the average rating of all comments" do
-        expect(@average.rating).to eq "3"
+        expect(@average.average_rating).to eq "3"
     expect(Product.new(description: "Nice bike")).not_to be_valid
     end
 
