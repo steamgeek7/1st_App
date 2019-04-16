@@ -10,7 +10,7 @@ class Ability
       can [:read, :update], User, id: user.id
       can [:read], Order, user_id: user.id
       can [:create], Order
-      can :create, :read], Comment
+      can [:create, :read], Comment
       can [:read], Product
     end
   end

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   def index
-    @comments = Comment.paginate(page: params[:page])
+    @comment = @comments.paginate(:page => 1, :per_page => 2)
   end
   def create
     @product = Product.find(params[:product_id])

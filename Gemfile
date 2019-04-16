@@ -58,6 +58,7 @@ end
 # Run against the latest stable release
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
+  gem "factory_bot_rails", "~> 4.0"
 end
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
