@@ -22,8 +22,12 @@
 
   <body>
     <div class="header">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p id="notice" class="alert alert-primary"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p id="alert" class="alert alert-secondary"><%= alert %></p>
+      <% end %>
       <nav>
         <ul>
           <li><%= link_to "Home", root_path %></li>
@@ -32,8 +36,8 @@
           <li><%= link_to "Products", products_path %></li>
           <li><div class="search">
             <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <%= form.text_field :q, id: 'q', value: params[:q] %>
-              <%= form.submit 'Search' %>
+              <%= form.text_field :q, id: 'q', value: params[:q], class:'form-control'%>
+              <%= form.submit 'Search', class:' button' %>
             <% end %>
           </div></li>
           <ul class="navbar-nav ml-auto">
