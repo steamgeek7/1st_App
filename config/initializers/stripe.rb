@@ -1,12 +1,12 @@
 if Rails.env.production?
   Rails.configuration.stripe = {
-    publishable_key: ENV['pk_live_nPI0VbuSsyjaAPwWsbXqq9oK00gUbbmE4H'],
-    secret_key: ENV['sk_live_6NfHxfaDbU2LRM7xAD9tjOkg00DOfi7Tbf']
+    publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
+    secret_key: ENV['STRIPE_SECRET_KEY']
   }
 else
   Rails.configuration.stripe = {
-    publishable_key: 'pk_test_nPI0VbuSsyjaAPwWsbXqq9oK00gUbbmE4H',
-    secret_key: 'sk_test_6NfHxfaDbU2LRM7xAD9tjOkg00DOfi7Tbf'
+    publishable_key: 'pk_test_zkT...',
+    secret_key: 'sk_test_I0e...'
   }
 end
 
