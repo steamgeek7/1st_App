@@ -54,6 +54,7 @@ group :development do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 # Run against the latest stable release
 group :development, :test do
