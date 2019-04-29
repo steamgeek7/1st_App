@@ -87,9 +87,12 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  config.action_mailer.default_url_options = { host: 'cf1stapp.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'cfapp-1.herokuapp.com/' }
 
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # Do not dump schema after migrations.
+  config.active_record.dump_schema_after_migration = false
+end
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
@@ -103,7 +106,3 @@ Rails.application.configure do
     logger.debug "Item after increment #{item}"
   end
   logger.debug "done iterating!"
-  
-  # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
-end
