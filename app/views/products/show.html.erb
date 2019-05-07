@@ -47,7 +47,7 @@
   <button>Submit Payment</button>
 </form>
 
-<%= form_with(url: '/payments/create') do |form| %>
+<%= form_with(url: payments_path) do |form| %>
   <%= render partial: "shared/stripe_checkout_button" %>
 <% end %>
 
