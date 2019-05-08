@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3', '~> 1.3.6'
+  gem 'dotenv-rails'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -59,6 +60,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot'
+
 end
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
