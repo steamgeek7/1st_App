@@ -1,0 +1,9 @@
+<div class="product-reviews">
+  <% @comments.each do |comment| %>
+    <div class="product-reviews">
+      <% @comments.each do |comment| %>
+        <%= render comment %>
+        <% end %>
+      </div>
+    <% end %>
+</div>
