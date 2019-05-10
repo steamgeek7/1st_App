@@ -1,22 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<% cache @product do %>
+  <h2><%= @product.name %></h2>
+  <p><%= @product.description %></p>
+<% end %>
 
 <p>
   <strong>Image url:</strong>
   <%= image_tag(@product.image_url, width: "350", class: "img-zoom") %>
-</p>
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
 </p>
 
 <p>
