@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/jodosha/redis-store.git
+  revision: 20d5a4d3741095b3509db353f719ab71c81adce5
+  ref: 20d5a4d3741095b3509d
+  specs:
+    redis-store (1.0.0.beta2)
+      redis (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -174,6 +182,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redis (4.1.1)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
@@ -276,6 +285,7 @@ DEPENDENCIES
   rails-ujs
   rails_12factor
   rake (~> 12.3.2)
+  redis-store (= 1.0.0.beta2)!
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
   spring
