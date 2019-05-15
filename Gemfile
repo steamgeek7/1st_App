@@ -54,7 +54,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rails-ujs'
   gem 'redis-store', '= 1.0.0.beta2', :git => 'https://github.com/jodosha/redis-store.git', :ref => '20d5a4d3741095b3509d'
-  gem 'dalli'
+
 
 end
 group :production do
@@ -66,6 +66,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot'
+  gem 'dalli'
 
 end
 ## Gemfile for Rails 3+, Sinatra, and Merb
