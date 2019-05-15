@@ -274,7 +274,7 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.10)
   coffee-rails (~> 4.2)
-  dalli (~> 2.7, >= 2.7.6)
+  dalli
   devise
   dotenv-rails
   factory_bot
