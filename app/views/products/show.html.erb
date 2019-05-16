@@ -18,6 +18,7 @@
 <%= render 'new_comment' %>
 
 <p>Average Rating: <div class="rated" id= '#average_rating' data-score="<%= @product.average_rating %>"> </div> </p>
+<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 <%= render @comments%>
 
 <script src="https://js.stripe.com/v3/"></script>

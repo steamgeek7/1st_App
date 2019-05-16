@@ -102,7 +102,8 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
-
+  config.web_socket_server_url = "wss://cfapp-1.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://cfapp-1.com', 'http://cfapp-1.com']
 end
   # if ENV["RAILS_LOG_TO_STDOUT"].present?
   #   logger           = ActiveSupport::Logger.new(STDOUT)
