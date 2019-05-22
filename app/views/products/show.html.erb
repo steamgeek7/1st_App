@@ -1,43 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<% cache @product do %>
-  <h2><%= @product.name %></h2>
-  <p><%= @product.description %></p>
-<% end %>
+  <% cache @product do %>
+    <h2><%= @product.name %></h2>
+    <p><%= @product.description %></p>
+  <% end %>
 
-<p>
-  <strong>Image url:</strong>
-  <%= image_tag(@product.image_url, width: "350", class: "img-zoom") %>
-</p>
+  <p>
+    <strong>Image url:</strong>
+    <%= image_tag(@product.image_url, width: "350", class: "img-zoom") %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%=@product.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%=@product.price %>
+  </p>
 
-<%= render 'new_comment' %>
+  <%= render 'new_comment' %>
+  <%= will_paginate @comments %>
+  <p>Average Rating: <div class="rated" id= '#average_rating' data-score="<%= @product.average_rating %>"> </div> </p>
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+  <%= render @comments%>
 
-<p>Average Rating: <div class="rated" id= '#average_rating' data-score="<%= @product.average_rating %>"> </div> </p>
-<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-<%= render @comments%>
+  <script src="https://js.stripe.com/v3/"></script>
 
-<script src="https://js.stripe.com/v3/"></script>
+  <form action="/charge" method="post" id="payment-form">
+    <div class="form-row">
+      <label for="card-element">
+        Credit or debit card
+      </label>
+      <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
 
-<form action="/charge" method="post" id="payment-form">
-  <div class="form-row">
-    <label for="card-element">
-      Credit or debit card
-    </label>
-    <div id="card-element">
-      <!-- A Stripe Element will be inserted here. -->
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
     </div>
 
-    <!-- Used to display form errors. -->
-    <div id="card-errors" role="alert"></div>
-  </div>
-
-  <button>Submit Payment</button>
-</form>
+    <button>Submit Payment</button>
+  </form>
 
 <%= form_with(url: payments_path) do |form| %>
   <%= render partial: "shared/stripe_checkout_button" %>
