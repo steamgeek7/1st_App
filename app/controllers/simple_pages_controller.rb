@@ -15,11 +15,14 @@ class SimplePagesController < ApplicationController
     @message = params[:message]
     UserMailer.contact_form(@email, @name, @message).deliver_now
   end
+  
+  private
+
   def get_hits
-    hits = $redis.get('hit_counter')
-    if !hits
-      hits = $redis.getset('hit_counter', 0)
+    @hits = $redis.get('hit_counter')
+    if !@hits
+      @hits = $redis.set('hit_counter', 0)
     end
-    return hits
+    @hits = $redis.incr('hit_counter')
   end
 end
