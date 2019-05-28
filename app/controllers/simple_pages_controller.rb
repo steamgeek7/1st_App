@@ -1,4 +1,5 @@
 class SimplePagesController < ApplicationController
+  before_action :get_hits, only: [:landing_page]
   def index
     @products = Product.limit(3)
   end
@@ -15,7 +16,7 @@ class SimplePagesController < ApplicationController
     @message = params[:message]
     UserMailer.contact_form(@email, @name, @message).deliver_now
   end
-  
+
   private
 
   def get_hits
