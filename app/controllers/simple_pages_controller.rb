@@ -1,5 +1,4 @@
 class SimplePagesController < ApplicationController
-  before_action :get_hits, only: [:landing_page]
   def index
     @products = Product.limit(3)
   end
