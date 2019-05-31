@@ -3,19 +3,18 @@
 <%= flash[:notice] %>
 
 <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
-<div class="row">
+<form>
   <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+    <label for="name">Name</label>
+      <input type="name" class="form-control name" id="name" placeholder="Enter your name..." required / name="name">
   </div>
   <div class="form-group">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+    <label for="email" required>Email Address*</label>
+      <input type="email" class="form-control email" id="email" required placeholder="Enter your Email address..." / name="emial">
   </div>
-  <div class="form-group">
-    <%= form.label :message %>
-    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
-  </div>
-</div>
-<%= form.submit "Send", class: "form_label" %>
+  <textarea style="resize:none" cols="40" rows="5" class="form-control" id="message-area" placeholder="Your message..." name="message" required ></textarea>
+    <p id="visible-comment"></p>
+    <p id="char-count"></p>
+  <button type="submit" class="btn btn-secondary" id="button">Submit</button>
+</form>
 <% end %>
